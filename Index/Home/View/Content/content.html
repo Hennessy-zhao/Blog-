@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>『耽美』{$title}</title>
+	<meta http-equiv="Content-TYPE" content="text/html;charset=utf-8"/>
+	<script src="__PUBLIC__/js/jquery-2.1.4.min.js" ></script>
+	<link  rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+	<script src="__PUBLIC__/js/bootstrap.js" ></script>
+	<script>
+		function validator()
+		{
+		  if(confirm("确认删除此条评论吗？")==true)
+		    return true;
+		  else
+		    return false;
+		}
+
+		
+		function showCom(comment){
+		$(comment).parent().next().removeClass('hello_hide');
+		}
+
+		function hiddenCom(comment){
+		$(comment).parent().next().addClass('hello_hide');
+		}
+
+	</script>
+	
+
+	<style type="text/css">
+		body{
+			background-image: url(__PUBLIC__/007.jpg);
+			background-repeat: repeat;
+			background-size: 500px 500px;
+			height: 7800px;
+		}
+
+		#top.col-md-12{
+			height: 60px;
+			background:white;
+			text-align: right;
+			list-style-type:none;
+			font-size: 18px;
+			margin-bottom: 50px;
+		}
+
+		#container.col-md-9{
+			height: 7640px;
+			background-color:rgba(233, 235, 240, 0.98);
+			border-left: 1px solid rgba(97, 119, 175, 0.23);
+			border-right: 1px solid rgba(97, 119, 175, 0.23);
+			position: absolute;
+			left: 13%;
+
+		}
+
+
+		#title_top.col-md-12{
+			height: 150px;
+			background-color:rgba(233, 235, 240, 0.68);
+			border-top: 1px solid rgba(97, 119, 175, 0.23);
+
+		}
+
+
+				#tt_l.col-md-2{
+					height: 150px;
+					background-color:rgba(233, 235, 240, 0.28);
+					
+				}
+
+				#tt_m.col-md-7{
+					height: 80px;
+					background-color:rgba(233, 235, 240, 0.28);
+					margin-top: 60px;
+					font-size: 40px;
+					font-family: 华文细黑;
+				}
+
+				#tt_r.col-md-3{
+					height: 50px;
+				
+					margin-top: 90px;
+					font-family: 华文楷体;
+					font-size: 25px;
+				}
+
+
+
+		#title_bottom.col-md-12{
+			height: 60px;
+			background-color:rgba(233, 235, 240, 0.48);
+			border-left: 1px solid rgba(97, 119, 175, 0.23);
+			border-right: 1px solid rgba(97, 119, 175, 0.23);
+		}
+
+		#navigation.col-md-12{
+			height: 40px;
+			background-color:rgba(132, 163, 241, 0.08);
+			margin-top: 10px;
+			border-bottom: 1px solid rgba(97, 119, 175, 0.23);
+			font-size: 16px;
+		}
+
+		#body.col-md-9{
+			height: 7000px;
+			background:white;
+			border-right: 1px solid rgba(97, 119, 175, 0.53);
+		}
+
+		#body.col-md-3{
+			height: 800px;
+			background:rgba(132, 163, 241, 0.48);
+			border-bottom: 1px solid rgba(97, 119, 175, 0.53);
+		}
+
+		#bottom.col-md-12{
+			height: 380px;
+			background:white;
+			border-radius: 5px;
+			border-top: 1px solid rgba(97, 119, 175, 0.23);
+			border-bottom: 1px solid rgba(97, 119, 175, 0.23);
+			border-left: 1px solid rgba(97, 119, 175, 0.23);
+			border-right: 1px solid rgba(97, 119, 175, 0.23);
+			font-size: 20px;
+			font-family: 华文细黑;
+		}
+
+
+		#host.col-md-12{
+			height: 50px;
+			background:rgba(132, 163, 241, 0.08);
+			border-bottom:1px dashed rgba(97, 119, 175, 0.23);
+			
+		}
+
+
+
+		a.a1:link{
+				color: black;
+				text-decoration: none;
+			}
+
+		a.a1:visited{
+			text-decoration:none; 
+			color:black;
+		}
+
+		a.a1:hover{
+			text-decoration:underline; 
+			color:blue;
+		}
+
+		a.a1:active{
+			text-decoration:none; 
+			color:black;
+		}
+
+		
+
+
+		a.a2:link{
+				color: blue;
+				text-decoration: none;
+			}
+
+		a.a2:hover{
+			text-decoration:underline; 
+			color:blue;
+		}
+
+		a.a2:visited{
+			text-decoration:none; 
+			color:blue;
+		}
+
+
+		table.tab1{
+			width: 50%;
+			position: absolute;
+			top:40%;
+			font-size: 18px;
+		}
+
+		table.tab2{
+			font-size: 20px;
+			font-family: 华文隶书;
+			color: black;
+		}
+
+		table.tab3{
+			width: 760px;
+		}
+
+		table.tab4{
+			width: 95%;
+			position: absolute;
+			top:15%;
+		}
+
+		#gap{
+			width: 100%;
+			height: 70px;
+			background-color:rgba(233, 235, 240, 0.98);
+		}
+
+		.hello_hide{
+			display: none;
+		}
+
+		
+
+		
+		
+	</style>
+</head>
+<body>
+
+
+	<div class="row">
+		<div class="col-md-12" id="top">
+			<!--下拉式-->
+				<nav class="navbar"  style="position:absolute;left:85%;">
+		   			<div>
+		      			<ul class="nav navbar-nav">
+							
+							<li class="dropdown" >
+							    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+							        <span class="glyphicon glyphicon-user"></span>
+							        <php>echo $_SESSION['username'];</php>
+							            <b class="caret"></b>
+							    </a>
+							 	<ul class="dropdown-menu">
+							        <li><a href="#">我的中心</a></li>
+							        <li><a href="{:U('Home/Index/index','','')}" onclick="return confirm('确定退出吗？')">退出</a></li>
+							              
+							    </ul>
+							</li>
+						</ul>
+					</div>
+				</nav>
+		</div>
+	</div>	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9" id="container">
+				<div class="row">
+					<div class="col-md-12" id="title_top">
+						<div class="column">
+							<div class="col-md-2" id="tt_l">
+								<img src="__PUBLIC__/001.jpg" class="img-thumbnail" style="width:140px;height:140px;position:absolute;left:14%;top:8%;">
+							</div>
+							<div class="col-md-7" id="tt_m">
+								&nbsp<span class="glyphicon glyphicon-star-empty"></span><a class="a1" href="{:U('Home/Message/message','','')}">&nbsp耽美评论圈</a>
+							</div>
+							<div class="col-md-3" id="tt_r">
+								圈主：  Hennessy
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="title_bottom">
+						<table  class="tab1">
+							 <tr>
+							 	<td align="left" colspan="2">
+							 		<a href="{:U('Home/Message/message')}" class="a1"><span class="glyphicon glyphicon-file"></span>&nbsp帖子</a>
+							 	</td>
+							 	<td align="left" colspan="2">
+							 		<a href="{:U('Home/Vote/vote','','')}" class="a1"><span class="glyphicon glyphicon-check"></span>&nbsp投票</a>
+							 	</td>
+							 	<td align="left" colspan="2">
+							 		<a href="#" class="a1"><span class="glyphicon glyphicon-picture"></span>&nbsp图库</a>
+							 	</td>
+							 	<td align="left" colspan="2">
+							 		<a href="#" class="a1"><span class="glyphicon glyphicon-user"></span>&nbsp管理员</a>
+							 	</td>
+							 	<td align="left" colspan="2">
+							 		<a href="#" class="a1"><span class="glyphicon glyphicon-list-alt"></span>&nbsp规定</a>
+							 	</td> 
+
+							 </tr>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="navigation">
+						<table width="100%">
+							<tr>
+								<td align="left">{$page}</td>
+								<td align="right"><a href="{:U('Home/Message/message','','')}" class="a2"><<返回耽美评论圈&nbsp&nbsp</a></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-9" id="body">
+						<div class="row">
+							<div class="col-md-12" id="host">
+								<table class="tab4">
+									<tr >
+										<td align="left">
+											<font size="5px" face="华文新魏">『耽美』{$title}</font>
+										</td>
+							         	<td align="right">
+							         		<font size="5px" face="华文新魏">楼主：&nbsp{$host}</font>
+							         	</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+							<table class="table" id="tab3">
+							   <tbody>
+							   		<!--输出评论-->
+										<foreach name='select' item='data'>
+								   			<tr>
+								   				<td align="left" colspan="2"><php>echo $num;$num++;</php>楼</td>
+								   			</tr>
+								   			<tr>
+								   				<td align="left"><font face="华文新魏" size="5px">{$data.user}</font></td>
+								   				<td align="right">{$data.lastdate}</td>
+								   			</tr>
+								   			<tr>
+								   				<td colspan="2">
+								   					{$data.message}
+								   				</td>
+								   			</tr>
+								   			
+								   				<!--一级评论-->
+										   	<tr>
+										   		<td>	
+								   					<div class="social">
+													    <a href="javascript:;" class="four" onClick="showCom(this)">评论</a>
+													    <a href="javascript:;" class="four" onClick="hiddenCom(this)"
+													    style="position:absolute;
+													    left:92%;">关闭</a>
+													</div>
+
+										   			<div class="comment hello_hide" id="show_comments">
+										   				
+										   				<form action="{:U('Home/Content/addcomment',array('num'=>$num))}" method="post">
+										   					<textarea class="form-control" rows="3" style="width:100%;" name="add_comment" ></textarea>
+										   					<center><input type="submit" class="btn btn-primary"></center>
+										   				
+										   				
+										   					
+										   				</form>
+										   				
+										   			
+										   			</div>	
+										   		</td>
+										   	</tr>
+										   	<!--输出一级评论-->
+								   			<php>
+								   						$number=$num-1;
+								   						$m = M('addcomment');      
+												        $where['title'] = $_SESSION['title'];
+												        $where['floot']=$number;
+												        $select = $m->field(true)->where($where)->order('id')->select();
+												        if($select){
+												        	foreach($select as $data2)
+												        	{
+												        		echo"<tr style='width:100%;'>";
+												        		echo"<td align='left' style='width:100%;'>【评论】&nbsp".$data2['adduser'].":&nbsp&nbsp".$data2['addcomment']."</td>";
+												        		echo"</tr>";
+												        	}
+												        }
+
+								   			</php>		
+									   			
+								   			<tr>
+								   				<td align="right" colspan="2">
+								   				<form action="{:U('Home/Content/delete1','','')}" method="post">
+								   					<input type='hidden' name='id' value='{$data.id}'>
+								   					<input type='hidden' name='name' value='{$data.user}'>
+
+								   					<input type='submit' class="btn btn-default" value='删除' onclick="return validator()">
+								   				</form>
+								   					
+								   			</td>
+								   			</tr>
+								   			<tr>
+								   				<td colspan="2"><div id="gap"></div></td>
+								   			</tr>
+										</foreach>
+							   </tbody>
+							</table>
+							
+							<br/><br/><center> {$page}<center>
+					</div>
+					<div class="col-md-3" id="body">
+							<br/>
+							<center>
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							</center>
+							<br/><br/>
+							<table class="tab2">
+								<tr>
+									<td align="left">&nbsp圈主： </td><td align="right">Hennessy</td>
+								</tr>
+								<tr>
+									<td align="left">&nbsp副圈主： </td><td align="right">Hennessy</td>
+								</tr>
+								<tr>
+									<td align="left">&nbsp管理员： </td><td align="right">Hennessy</td>
+								</tr>
+								<tr>
+									<td align="left">&nbsp管理员： </td><td align="right">Hennessy</td>
+								</tr>
+								<tr>
+									<td align="left">&nbsp管理员： </td><td align="right">Hennessy</td>
+								</tr>
+							</table>
+							<br/><br/>
+							<center>
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							&nbsp<span class="glyphicon glyphicon-star"></span>&nbsp
+							</center>
+							<br/><br/>
+							<p class="p2">圈规</p>
+							<ul class="u1">
+								<li>禁止无端辱骂他人，爆粗口，违者封号</li>
+								<li>禁止散播淫乱不健康信息，违者封号</li>
+								<li>禁止打广告，违者禁言</li>
+								<li>非耽美爱好者请绕道，违者封号</li>
+								<li>长期发起与本圈无关话题者禁号</li>
+							</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12" id="bottom">
+						<form action="{:U('Home/Content/handle','','')}" method="post">
+							<div class="form-group">
+								<p><center><span class="glyphicon glyphicon-star-empty"></span>&nbsp评论&nbsp<span class="glyphicon glyphicon-star-empty"></span></center></p>
+								评论<textarea class="form-control" rows="6" name="comment" ></textarea><br/>
+								发帖人：&nbsp&nbsp<php>echo $_SESSION['username'];</php><br/><br/>
+								<center><input type="submit" class="btn btn-primary" style="width:80%;height:40px;"></center>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	
+</body>
+</html>

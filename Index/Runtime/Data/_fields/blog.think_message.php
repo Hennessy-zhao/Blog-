@@ -1,0 +1,1 @@
+a:9:{i:0;s:2:"id";i:1;s:4:"user";i:2;s:5:"title";i:3;s:7:"message";i:4;s:8:"add_user";i:5;s:11:"add_message";i:6;s:8:"lastdate";s:3:"_pk";s:2:"id";s:5:"_type";a:7:{s:2:"id";s:7:"int(11)";s:4:"user";s:11:"varchar(32)";s:5:"title";s:11:"varchar(64)";s:7:"message";s:4:"text";s:8:"add_user";s:11:"varchar(32)";s:11:"add_message";s:4:"text";s:8:"lastdate";s:8:"datetime";}}
